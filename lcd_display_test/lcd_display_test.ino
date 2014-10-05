@@ -21,7 +21,18 @@
 
 // Connect via i2c, default address #0 (A0-A2 not jumpered)
 LiquidCrystal lcd(0);
-uint8_t HEART_CHARACTER[] = {0x1A, 0x10, 0x1F, 0x0E, 0x04, 0x00};
+
+//only lowest 5 bits used
+//5 x 8 character matrix
+uint8_t HEART_CHARACTER[] = {
+	0b00000000,
+        0b00001010,
+        0b00011111,
+        0b00011111,
+        0b00001110,
+        0b00000100,
+        0b00000000,
+        0b00000000};
 
 void setup() {
   // set up the LCD's number of rows and columns: 
@@ -30,7 +41,8 @@ void setup() {
   lcd.clear();
   // Print a message to the LCD.
   lcd.print("HackRVA rocks!");
-  lcd.write(0);
+
+  lcd.setBacklight(HIGH);
 }
 
 void loop() {
@@ -38,9 +50,8 @@ void loop() {
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
   // print the number of seconds since reset:
-  lcd.print(millis()/1000);
+  lcd.print(millis()/1000); 
 
-  lcd.setBacklight(HIGH);
   delay(1000);
 }
 
