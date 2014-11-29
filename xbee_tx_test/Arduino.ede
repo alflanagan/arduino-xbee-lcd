@@ -1,0 +1,4 @@
+;; Object Configuration
+;; EDE Arduino Project Configuration
+(ede-arduino-config "Configuration"
+  :file "Arduino.ede")
