@@ -8,7 +8,7 @@
 ARDUINO_DIR  = /usr/share/arduino
 
 TARGET       = xbee_tx_test
-ARDUINO_LIBS = LiquidCrystal
+ARDUINO_LIBS = LiquidCrystal XBee stdint
 
 MCU          = atmega328p
 F_CPU        = 16000000L
