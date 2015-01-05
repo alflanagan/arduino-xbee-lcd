@@ -155,7 +155,7 @@ void showStats(const int success, const int errors) {
  **************************************************/
 int sendText(const char *msg) {   
 
-  // break down 10-bit reading into two bytes and place in payload
+        // break down 10-bit reading into two bytes and place in payload
   //  pin5 = analogRead(5);
   //  payload[0] = pin5 >> 8 & 0xff;
   //  payload[1] = pin5 & 0xff;
@@ -203,7 +203,8 @@ int sendText(const char *msg) {
   return 0;
 }
 
-void loop() {
+void loop()
+{
   successCount++;
   if (successCount > 9999) { successCount = 0; }
   //copy from string literal -- only time strcpy is safe
@@ -212,3 +213,7 @@ void loop() {
   doMessage(field2);
   delay(5000);
 }
+
+/* Local Variables: */
+/* c-file-style: "gnu" */
+/* End: */
